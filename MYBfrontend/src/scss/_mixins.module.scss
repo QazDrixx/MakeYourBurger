@@ -1,0 +1,17 @@
+
+
+
+@mixin fontStyle($fontColor, $fontSize, $fontStyle, $fontWeight, $lineHeight){
+    color: $fontColor;
+    font-size: $fontSize;
+    font-style: $fontStyle;
+    font-weight: $fontWeight;
+    line-height: $lineHeight; 
+}
+
+@mixin divider($height, $background) {
+    height: $height;
+    background: $background;
+    align-self: stretch;
+    border-radius: 6.1875rem;
+}

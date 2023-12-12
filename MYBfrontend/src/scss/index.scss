@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap');
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    // min-width: 320px;
+}
+
+:root {
+    font-family: 'Open Sans';
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+html, body{
+    margin: 0;
+}
