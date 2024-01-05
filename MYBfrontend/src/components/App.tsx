@@ -9,10 +9,10 @@ import { AppContextProvider } from '../utils/AppContextProvider'
 
 function App() {
     const location = useLocation()
-    const [isFirstRender, setPlayAnimation] = useState(false)
+    const [isFirstRender, setFirstRender] = useState(true)
 
     useEffect(() => {
-        setPlayAnimation(true)
+        setFirstRender(false)
     }, [location.pathname])
 
     return (

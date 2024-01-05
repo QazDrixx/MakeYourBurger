@@ -4,6 +4,7 @@
 .footerWrap {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 1rem;
     align-self: stretch;
     @include mixins.fontStyle(colors.$primary-muted, 0.75rem, normal, 400, normal);
@@ -30,38 +31,7 @@
     .footerRight {
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
         gap: 0.5rem;
     }
-}
-
-@mixin paymentBase ($background) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 2.1875rem;
-    height: 1.5rem;
-    flex-shrink: 0;
-    border-radius: 0.25rem;
-    background: $background;
-}
-
-.base {
-    width: 2.1875rem;
-    height: 1.5rem;
-}
-
-.mastercardBase {
-    @include paymentBase(#FFF4EE);
-}
-
-.googlePayBase {
-    @include paymentBase(#F1F6FF);
-}
-
-.payPalBase {
-    @include paymentBase(#F3FBFF);
-}
-
-.etheriumBase {
-    @include paymentBase(#F1F4FF);
 }

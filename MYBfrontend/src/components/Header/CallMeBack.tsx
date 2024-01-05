@@ -1,6 +1,7 @@
 import classes from './Header.module.scss'
 import { PhoneSVG } from '../svgComponents/PhoneSVG'
 
+
 export const CallMeBack = () => {
     return (
         <>
@@ -10,7 +11,6 @@ export const CallMeBack = () => {
                 <div>Call Me Back</div>
             </div>
         </div>
-        <div className={classes.number}>8 800 437-87-22</div>
         </>
     )
 }

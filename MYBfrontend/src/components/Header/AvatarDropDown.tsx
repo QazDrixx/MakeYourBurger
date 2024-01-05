@@ -1,11 +1,12 @@
 import classes from './Header.module.scss'
 import { DefaultAvatarSVG } from '../svgComponents/DefaultAvatarSVG'
+import { HeaderElement } from './HeaderElementInterface'
 
 
-export const AvatarDropDown = () => {
+export const AvatarDropDown = ({isVisible}:HeaderElement) => {
     return (
         <>
-            <div className={classes.avatarDropDownWrap}>
+            <div className={`${classes.avatarDropDownWrap} ${!isVisible?classes.hidden:''}`}>
                 <div className={classes.avatarDropDown}>
                     <div className={classes.avatarFrame}>
                         {<DefaultAvatarSVG/>}
@@ -20,7 +21,6 @@ export const AvatarDropDown = () => {
                             <div className={classes.dropDownLink}>Settings</div>
                             <div className={classes.dropDownLink}>Log out</div>
                         </div>
-
                     </div>
                 </div>
             </div>

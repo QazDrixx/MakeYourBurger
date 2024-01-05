@@ -1,23 +1,93 @@
 @use '../../scss/colors' as colors;
 @use '../../scss/mixins.module' as mixins;
 
+
+@media (max-width: 1200px) {
+    .landingPageWrap {
+        flex-direction: column;
+        gap: 2rem;
+        width: 100%;
+
+        .imagesWrap {
+            .burger {
+                background-position: center;
+            }
+            .burgerBackground {
+                width: 100%;
+                height: 100%;
+                background-position: center;
+            }
+            .makeBurgerWrap { 
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+            }
+        }
+    }
+}
+
+@media (min-width: 576px) {
+    .burger {
+        background-size: contain;
+    }
+    .makeBurgerWrap { 
+        width: calc(11.25rem/1.2);
+        height: calc(11.25rem/1.2);
+        @include mixins.fontStyle(colors.$primary-white, 1.5rem, normal, 800, 1.875rem);
+    }
+}
+
+@media (max-width: 576px) {
+    .burger {
+        background-size: cover;
+    }
+
+    .makeBurgerWrap { 
+        width: 7.5rem;
+        height: 7.5rem;
+        @include mixins.fontStyle(colors.$primary-white, 1rem, normal, 800, 1.25rem);
+    }
+}
+
+@media (min-width: 1200px) {
+    .landingPageWrap {
+        gap: 25%;
+
+        .imagesWrap {
+            min-width: 35rem;
+            .burger {
+                background-position: top left;
+            }
+            .burgerBackground {
+                width: 83%;
+                height: 83%;
+                background-size: contain;
+                background-position: bottom left 15%;
+                align-self: flex-end;
+            }
+        }
+        .makeBurgerWrap { 
+            top: 50%;
+            left: calc(-11.25rem/2 - 1rem);
+        }
+    }
+
+}
+
 .landingPageWrap {
     display: flex;
     position: relative;
     align-items: center;
     flex: 1;
-    gap: 15%;
-    .text {
-        @include mixins.fontStyle(colors.$primary-black, 4.5rem, normal, 700, 5rem);
-    }
 
     .imagesWrap {
         display: flex;
         position: relative;
-        min-width: 35rem;
-        min-height: 30rem;
         width: 100%;
         height: 100%;
+        min-height: 30rem;
 
         .burger {
             flex: 1 0 0;
@@ -25,30 +95,20 @@
             width: 100%;
             height: 100%;
             background-image: url('/burger.png');
-            background-size: contain;
             background-repeat: no-repeat;
-            background-position: top left;
             z-index: 1;
         }
 
         .burgerBackground {
             position: absolute;
-            align-self: flex-end;
-            width: 83%;
-            height: 83%;
             background-image: url('/burgerBackground1.png');
-            background-size: contain;
             background-repeat: no-repeat;
-            background-position: bottom left 15%;
+            background-size: contain;
         }
 
         .makeBurgerWrap {
             position: absolute;
-            top: 50%;
-            left: calc(-11.25rem/2 - 1rem);
             display: flex;
-            width: calc(11.25rem/1.2);
-            height: calc(11.25rem/1.2);
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -66,7 +126,6 @@
 
             .makeBurger {
                 word-spacing: 100vw;
-                @include mixins.fontStyle(colors.$primary-white, 1.5rem, normal, 800, 1.875rem);
                 text-align: center;
                 text-transform: uppercase;
             }

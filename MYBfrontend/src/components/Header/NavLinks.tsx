@@ -1,19 +1,12 @@
 import classes from './Header.module.scss'
-import { LogoSVG } from '../svgComponents/LogoSVG'
 import { NavLink } from 'react-router-dom'
+import { HeaderElement } from './HeaderElementInterface'
 
-
-export const NavLinks = () => {
+export const NavLinks = ({isVisible}:HeaderElement) => {
 
     return (
         <>
-        <div className={classes.headerLogoWrap}>
-            <div className={classes.headerLogo}>
-                <LogoSVG/>
-            </div>
-        </div>
-
-        <div className={classes.headerNav}>
+        <div className={`${classes.headerNav} ${!isVisible?classes.hidden:''}`}>
             <NavLink
                 to='/'
                 className={({isActive})=> (`${classes.navLinkLayout} ${isActive?classes.selected:classes.unselected}`)}

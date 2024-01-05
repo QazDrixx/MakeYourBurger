@@ -17,12 +17,13 @@ export const AnimatedPage = ({xInitial, xExit, children}:AnimatedPageProps) => {
 
     return (
         <motion.div
-            initial={!isFirstRender?false:{x: xInitial}}
+            initial={isFirstRender?false:{x: xInitial}}
             animate={{x: '0'}}
             exit={{x: xExit}}
             onAnimationStart={() => document.body.style.overflow = 'hidden'}
             onAnimationComplete={() => {document.body.style.overflow = 'auto'}}
             transition={{duration:'0.3', type:'spring'}}
+            style={{display:'flex', height:'100%'}}
         >
             {children}
         </motion.div>

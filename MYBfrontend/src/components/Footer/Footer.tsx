@@ -11,15 +11,13 @@ export const Footer = () => {
                 <a href='#' className={classes.pp}>Terms & Conditions</a>
             </div>
             <div className={classes.footerRight}>
-                <div className={classes.base}><Visa/></div>
-                <div className={classes.mastercardBase}><MasterCard/></div>
-                <div className={classes.googlePayBase}><GooglePay/></div>
-                <div className={classes.base}><ApplePay/></div>
-                <div className={classes.payPalBase}><PayPal/></div>
-                <div className={classes.base}><Bitcoin/></div>
-                <div className={classes.etheriumBase}><Etherium/></div>
-
-                
+                <Visa/>
+                <MasterCard/>
+                <GooglePay/>
+                <ApplePay/>
+                <PayPal/>
+                <Bitcoin/>
+                <Etherium/>
             </div>
         </div>
     )
